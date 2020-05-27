@@ -11,6 +11,6 @@ public interface Stockchangeservice {
 
     public PageInfo<Stockchange> findStockchange(Integer page, Integer pageSize);
 
-    public PageInfo<Stockchange> selectStockchange(Integer page, Integer pageSize,Integer mid, Integer sid, Integer stype);
+    public PageInfo<Stockchange> selectStockchange(Integer page, Integer pageSize, Integer mid, Integer sid, Integer stype);
 
 }

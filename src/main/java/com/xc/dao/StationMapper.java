@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface StationMapper extends Mapper<Station> {
    @Select("select * from station where sname=(case when #{sname} is null then sname else #{sname} end) and levels=(case when #{levels} is null then levels else #{levels} end)")
-   public List<Station> selectforname(String sname,Integer levels);
+   public List<Station> selectforname(String sname, Integer levels);
 }
