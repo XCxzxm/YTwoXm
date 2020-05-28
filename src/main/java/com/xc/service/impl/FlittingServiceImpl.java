@@ -15,6 +15,23 @@ import java.util.List;
 public class FlittingServiceImpl implements FlittingService {
     @Autowired
     private FlittingMapper flittingMapper;
+
+    @Override
+    public PageInfo<Flitting> selectforname(Integer page, Integer pageSize, Integer fid, Integer ftype, Integer oid) {
+        PageHelper.startPage(page,pageSize);
+
+        List list=this.flittingMapper.selectforname(fid, ftype, oid);
+        PageInfo pageInfo=new PageInfo(list);
+        return pageInfo;
+
+    }
+
+    @Override
+    public boolean updateFlitting(Flitting flitting) {
+        flitting.setFover("已签收");
+        return this.flittingMapper.updateByPrimaryKey(flitting)>0?true:false;
+    }
+
     @Override
     public boolean addFlitting(Flitting flitting) {
         return this.flittingMapper.insert(flitting)>0?true:false;
