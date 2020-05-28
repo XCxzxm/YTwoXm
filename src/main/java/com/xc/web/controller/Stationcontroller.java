@@ -5,17 +5,24 @@ import com.xc.domain.Station;
 import com.xc.dto.MsgDto;
 import com.xc.dto.PageDto;
 import com.xc.dto.StationDto;
-import com.xc.service.Stationservice;
+import com.xc.service.StationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("Station")
 public class Stationcontroller {
     @Autowired
-    private Stationservice stationservice;
+    private StationService stationservice;
+
+    @RequestMapping("findStations")
+    public List<Station> findStations(){
+        return this.stationservice.findStations();
+    }
 
     @RequestMapping("stationpage")
     public PageInfo<Station> stationpage(StationDto stationDto){

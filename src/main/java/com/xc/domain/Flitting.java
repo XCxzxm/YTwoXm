@@ -7,22 +7,36 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
-
-@Table(name = "flitting")
+@Table(name="flitting")
 public class Flitting {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer fid;
     private Integer oid;
     private Integer ftype;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date outdate;
     private String fover;
     private Integer sid;
-    private Integer did;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    private  Integer did;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date flitdate;
     private Integer pid;
+
+    public Flitting() {
+    }
+
+    public Flitting(Integer fid, Integer oid, Integer ftype, Date outdate, String fover, Integer sid, Integer did, Date flitdate, Integer pid) {
+        this.fid = fid;
+        this.oid = oid;
+        this.ftype = ftype;
+        this.outdate = outdate;
+        this.fover = fover;
+        this.sid = sid;
+        this.did = did;
+        this.flitdate = flitdate;
+        this.pid = pid;
+    }
 
     public Integer getFid() {
         return fid;
@@ -93,20 +107,6 @@ public class Flitting {
     }
 
     public void setPid(Integer pid) {
-        this.pid = pid;
-    }
-
-    public Flitting() {
-    }
-
-    public Flitting(Integer oid, Integer ftype, Date outdate, String fover, Integer sid, Integer did, Date flitdate, Integer pid) {
-        this.oid = oid;
-        this.ftype = ftype;
-        this.outdate = outdate;
-        this.fover = fover;
-        this.sid = sid;
-        this.did = did;
-        this.flitdate = flitdate;
         this.pid = pid;
     }
 }

@@ -5,7 +5,9 @@ import com.xc.domain.Station;
 import com.xc.dto.PageDto;
 import com.xc.dto.StationDto;
 
-public interface Stationservice {
+import java.util.List;
+
+public interface StationService {
     public boolean savaTEmployee(Station station);
 
     public boolean deleteTEmployee(Integer id);
@@ -16,4 +18,5 @@ public interface Stationservice {
 
     public PageInfo<Station>findselect(PageDto pageDto);
 
+    public List<Station> findStations();
 }

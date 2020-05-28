@@ -6,14 +6,13 @@ import com.xc.dao.StationMapper;
 import com.xc.domain.Station;
 import com.xc.dto.PageDto;
 import com.xc.dto.StationDto;
-import com.xc.service.Stationservice;
+import com.xc.service.StationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
-public class Stationserviceimpl implements Stationservice {
+public class StationServiceImpl implements StationService {
     @Autowired
     private StationMapper stationMapper;
 
@@ -55,5 +54,8 @@ public class Stationserviceimpl implements Stationservice {
         return pageInfo;
     }
 
-
+    @Override
+    public List<Station> findStations() {
+        return stationMapper.selectAll();
+    }
 }

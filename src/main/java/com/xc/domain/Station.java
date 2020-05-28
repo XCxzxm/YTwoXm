@@ -7,14 +7,21 @@ import javax.persistence.Table;
 
 @Table(name = "station")
 public class Station {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer sid;
     private Integer levels;
     private String sname;
     private String saddress;
     private String addmin;
-    private Integer snoid;
+
+    public Station(Integer sid, Integer levels, String sname, String saddress, String addmin) {
+        this.sid = sid;
+        this.levels = levels;
+        this.sname = sname;
+        this.saddress = saddress;
+        this.addmin = addmin;
+    }
 
     public Integer getSid() {
         return sid;
@@ -54,24 +61,5 @@ public class Station {
 
     public void setAddmin(String addmin) {
         this.addmin = addmin;
-    }
-
-    public Integer getSnoid() {
-        return snoid;
-    }
-
-    public void setSnoid(Integer snoid) {
-        this.snoid = snoid;
-    }
-
-    public Station() {
-    }
-
-    public Station(Integer levels, String sname, String saddress, String addmin, Integer snoid) {
-        this.levels = levels;
-        this.sname = sname;
-        this.saddress = saddress;
-        this.addmin = addmin;
-        this.snoid = snoid;
     }
 }
