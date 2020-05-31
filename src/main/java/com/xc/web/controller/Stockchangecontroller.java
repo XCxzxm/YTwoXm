@@ -16,6 +16,12 @@ public class Stockchangecontroller {
     @Autowired
     private Stockchangeservice stockchangeservice;
 
+    @RequestMapping("addStockchange")
+    public MsgDto addStockchange(@RequestBody Stockchange stockchange){
+        this.stockchangeservice.addStockchange(stockchange);
+        return new MsgDto(true,"生成完成");
+    }
+
     @RequestMapping("findStockchange")
     public PageInfo<Stockchange> findStockchange(Integer page,Integer pageSize){
         PageInfo<Stockchange> pageInfo=this.stockchangeservice.findStockchange(page, pageSize);

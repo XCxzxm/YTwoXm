@@ -5,6 +5,8 @@ import com.xc.domain.Stockchange;
 import java.util.List;
 
 public interface Stockchangeservice {
+    public boolean addStockchange(Stockchange stockchange);
+
     public boolean updateStockchange(Stockchange stockchange);
 
     public boolean outupdateStockchange(Stockchange stockchange);

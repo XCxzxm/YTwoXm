@@ -20,6 +20,9 @@ public class PlansServiceImpl implements PlansService {
     private FlittingMapper flittingMapper;
     @Override
     public void addPlan(Plans plans) {
+//        Integer upid=345764;
+//        upid++;
+//        plans.setPid(upid);
         this.plansMapper.insert(plans);
     }
 

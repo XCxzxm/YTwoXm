@@ -17,6 +17,27 @@ public class Stockchangeserviceimpl implements Stockchangeservice {
     private StockchangeMapper stockchangeMapper;
 
     @Override
+    public boolean addStockchange(Stockchange stockchange) {
+        Integer upid=345764;
+        upid++;
+        stockchange.setPid(upid);
+
+        Integer udid=485764;
+        udid++;
+        stockchange.setDid(udid);
+
+        Integer umid=601874;
+        umid++;
+        stockchange.setMid(umid);
+
+        Date date=new Date();
+        stockchange.setSdate(date);
+
+        stockchange.setStype(2);
+        return this.stockchangeMapper.insert(stockchange)>0?true:false;
+    }
+
+    @Override
     public boolean updateStockchange(Stockchange stockchange) {
         stockchange.setStype(2);
         return this.stockchangeMapper.updateByPrimaryKey(stockchange)>0?true:false;
