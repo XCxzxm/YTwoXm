@@ -36,4 +36,9 @@ public class OrdersServiceImpl implements OrdersService {
     public void changeOrderStruts(Orders orders) {
         this.ordersMapper.updateByPrimaryKey(orders);
     }
+
+    @Override
+    public boolean addOrder(Orders orders) {
+        return this.ordersMapper.insert(orders)>0?true:false;
+    }
 }
