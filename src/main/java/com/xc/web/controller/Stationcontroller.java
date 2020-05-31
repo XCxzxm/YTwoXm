@@ -19,6 +19,12 @@ public class Stationcontroller {
     @Autowired
     private StationService stationservice;
 
+    @RequestMapping("findStationsBySid")
+    public List<Station> findStationsBySid(Integer sid,String type){
+
+        return  this.stationservice.findStationsBySid2(sid,type);
+    }
+
     @RequestMapping("findStations")
     public List<Station> findStations(){
         return this.stationservice.findStations();

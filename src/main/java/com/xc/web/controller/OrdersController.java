@@ -16,8 +16,8 @@ public class OrdersController {
     @Autowired
     private OrdersServiceImpl ordersService;
 @RequestMapping("findOrderAll")
-    public PageInfo<Orders> findOrderAll(Integer page,Integer pageSize){
-        PageInfo<Orders> pageInfo=this.ordersService.findOrders(page,pageSize);
+    public PageInfo<Orders> findOrderAll(Integer page,Integer pageSize,String sname){
+        PageInfo<Orders> pageInfo=this.ordersService.findOrders(page,pageSize,sname);
         return pageInfo;
     }
 
