@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.util.Sqls;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class OrdersServiceImpl implements OrdersService {
@@ -40,6 +41,9 @@ public class OrdersServiceImpl implements OrdersService {
 
     @Override
     public boolean addOrder(Orders orders) {
+        Date date=new Date();
+        orders.setCreatedate(date);
+        orders.setStatus(1);
         return this.ordersMapper.insert(orders)>0?true:false;
     }
 }
