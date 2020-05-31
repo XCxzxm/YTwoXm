@@ -37,4 +37,18 @@ public class PlansController {
         this.plansService.delectPlan(pid);
         return new MsgDto(true,"成功");
     }
+    @RequestMapping("findBySturts")
+    public PageInfo findBySturts(Integer page,Integer pageSize,String struts){
+        if(struts==""){
+            return this.plansService.findPlansAll(page,pageSize);
+        }else {
+            return this.plansService.findBySturts(page, pageSize, struts);
+        }
+    }
+    @RequestMapping("findById")
+    public PageInfo findById(Integer pid){
+        return this.plansService.findById(pid);
+    }
+
+
 }

@@ -19,4 +19,6 @@ public interface StationService {
     public PageInfo<Station>findselect(PageDto pageDto);
 
     public List<Station> findStations();
+    public Station findStationsBySid(Integer sid);
+    public List<Station> findStationsBySid2(Integer sid,String type);
 }
