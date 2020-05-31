@@ -17,9 +17,10 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersMapper ordersMapper;
 
     @Override
-    public PageInfo<Orders> findOrders(Integer page, Integer pageSize) {
+    public PageInfo<Orders> findOrders(Integer page, Integer pageSize,String sname) {
         Example example=new Example(Orders.class);
-        example.createCriteria().andEqualTo("status",1);
+        example.createCriteria().andEqualTo("receivepost",sname).andEqualTo("status",1);
+
         PageHelper.startPage(page,pageSize);
         List list=ordersMapper.selectByExample(example);
      //   List list= this.ordersMapper.selectAll();

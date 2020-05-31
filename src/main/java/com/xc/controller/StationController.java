@@ -17,4 +17,9 @@ public class StationController {
     public List<Station> findStations(){
         return this.stationService.findStations();
     }
+    @RequestMapping("findStationsBySid")
+    public List<Station> findStationsBySid(Integer sid,String type){
+
+        return  this.stationService.findStationsBySid2(sid,type);
+    }
 }
