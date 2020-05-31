@@ -35,7 +35,7 @@ public class PlansServiceImpl implements PlansService {
     @Override
     public boolean delectPlan(Integer pid) {
         return this.plansMapper.deleteByPrimaryKey(pid)>0?true:false;
-    }
+}
 
     @Override
     public PageInfo<Plans> findBySturts(Integer page, Integer pagesize, String sturts) {

@@ -41,6 +41,7 @@ public class FlittingController {
     }
     @RequestMapping("delectFlitting")
     public MsgDto delectFlitting(Integer fid){
+        this.flittingService.delectFlitting(fid);
            return new MsgDto(true,"成功");
     }
 }
