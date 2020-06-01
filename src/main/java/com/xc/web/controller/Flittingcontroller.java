@@ -41,7 +41,7 @@ public class Flittingcontroller {
         flitting.setOid(orders.getOid());
         flitting.setOutdate(new Date());
         flitting.setFtype(dtid);
-        flitting.setFover("未处理");
+        flitting.setFover("未签收");
         flitting.setFlitdate(new Date());
         flitting.setPid(pid);
         orders.setStatus(2);

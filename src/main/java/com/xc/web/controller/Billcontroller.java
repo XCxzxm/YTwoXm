@@ -33,4 +33,10 @@ public class Billcontroller {
         return new MsgDto(true,"已作废");
     }
 
+    @RequestMapping("billsava")
+    public MsgDto billsava(@RequestBody Bill bill){
+        this.billservice.billsava(bill);
+        return new MsgDto(true,"添加成功");
+    }
+
 }

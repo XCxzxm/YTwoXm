@@ -31,6 +31,9 @@ public class Missionserviceimpl implements Missionservice {
         Integer uifd=305764;
         uifd++;
         mission.setFid(uifd);
+        mission.setMtype(1);
+        mission.setStatus(1);
+
         Date date=new Date();
         mission.setCreatedate(date);
         return this.missionMapper.insert(mission)>0?true:false;

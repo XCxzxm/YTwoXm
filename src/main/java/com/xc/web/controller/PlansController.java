@@ -17,6 +17,7 @@ public class PlansController {
     private PlansService plansService;
     @RequestMapping("addPlans")
     public Plans addPlans(Integer sid,Integer handle,String remark){
+
         Plans plans=new Plans();
         plans.setSid(sid);
         plans.setManagedate(new Date());

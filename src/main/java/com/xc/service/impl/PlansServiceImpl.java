@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,9 +22,9 @@ public class PlansServiceImpl implements PlansService {
     private FlittingMapper flittingMapper;
     @Override
     public void addPlan(Plans plans) {
-//        Integer upid=345764;
-//        upid++;
-//        plans.setPid(upid);
+        Date date=new Date();
+        Integer ous=(date.getSeconds()+date.getMinutes())*3681;
+        plans.setPid(ous);
         this.plansMapper.insert(plans);
     }
 

@@ -34,4 +34,9 @@ public class Billserviceimpl implements Billservice {
         bill.setStatus(2);
         return this.billMapper.updateByPrimaryKey(bill)>0?true:false;
     }
+
+    @Override
+    public boolean billsava(Bill bill) {
+        return this.billMapper.insert(bill)>0?true:false;
+    }
 }

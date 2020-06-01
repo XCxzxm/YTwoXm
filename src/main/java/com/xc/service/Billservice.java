@@ -10,4 +10,6 @@ public interface Billservice {
 
     public boolean billupdatepus(Bill bill);
 
+    public boolean billsava(Bill bill);
+
 }
